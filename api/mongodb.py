@@ -5,4 +5,4 @@ def get_db_handle():
     client = pymongo.MongoClient(settings.MONGO_URI)
     db_handle = client[settings.MONGO_DB_NAME]
 
-    return db_handle, client
+    return db_handle
