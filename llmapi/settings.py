@@ -25,8 +25,19 @@ SECRET_KEY = 'django-insecure-w_l-jvpa)motoy50($5@&te9rl(5^)n*z^32^sp4jzj2btxrt6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
 
+ALLOWED_HOSTS = ['*']
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOW_METHODS = (
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+)
 
 # Application definition
 
@@ -37,6 +48,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'api',
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -80,6 +94,17 @@ DATABASES = {
     }
 }
 
+from decouple import config
+
+# Configurações do MongoDB
+MONGO_DB_NAME = 'llmapi'
+MONGO_HOST = 'localhost'
+MONGO_PORT = '27017'
+MONGO_USER = 'root'
+MONGO_PASSWORD = 'example'
+
+# Construindo a URI de conexão com autenticação
+MONGO_URI = f"mongodb://{MONGO_USER}:{MONGO_PASSWORD}@{MONGO_HOST}:{MONGO_PORT}/{MONGO_DB_NAME}?authSource=admin"
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
