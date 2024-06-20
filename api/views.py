@@ -2,8 +2,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 import logging
-from .serializers import UserSerializer
-from api.mongodb import get_db_handle
+from serializers.user_serializers import UserSerializer
+from llmapi.mongodb import get_db_handle
 
 logging.basicConfig(format='%(asctime)s %(levelname)s:%(name)s:%(message)s')
 logging.getLogger().setLevel(logging.INFO)
