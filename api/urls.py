@@ -1,8 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 
-from assistant.views import OpenAIAPIView
-from users.views import UserView
+from views import OpenAIAPIView, UserView
  
 app_name = 'api'
  
