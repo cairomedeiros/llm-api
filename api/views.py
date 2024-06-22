@@ -2,9 +2,10 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 import logging
+from openai import OpenAI
 from django.conf import settings
-from serializers.user_serializers import UserSerializer
-from serializers.assistant_serializers import OpenAIRequestSerializer
+from .serializers.user_serializers import UserSerializer
+from .serializers.assistant_serializers import OpenAIRequestSerializer
 from llmapi.mongodb import get_db_handle
 
 logging.basicConfig(format='%(asctime)s %(levelname)s:%(name)s:%(message)s')
