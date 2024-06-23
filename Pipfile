@@ -7,8 +7,8 @@ name = "pypi"
 django = "*"
 djangorestframework = "*"
 pymongo = "*"
-openai = "*"
 python-dotenv = "*"
+llamaapi = "*"
 
 [dev-packages]
 
